@@ -2,13 +2,14 @@
 //  TSNetworking.h
 //  TSNetworking
 //
-//  Created by Seven Lv on 15/12/22.
-//  Copyright © 2015年 Seven. All rights reserved.
+//  Created by 李佳育 on 2016/10/21.
+//  Copyright © 2016年 李佳育. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "AFHTTPSessionManager.h"
-#import "NSObject+MJKeyValue.h"
+//#import "NSObject+MJKeyValue.h"
+
 /// 基础URL
 UIKIT_EXTERN NSString * const kAPIBaseURL;
 

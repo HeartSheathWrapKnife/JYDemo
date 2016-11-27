@@ -2,12 +2,12 @@
 //  TSNetworking.m
 //  TSNetworking
 //
-//  Created by Seven Lv on 15/12/22.
-//  Copyright © 2015年 Seven. All rights reserved.
+//  Created by 李佳育 on 2016/10/21.
+//  Copyright © 2016年 李佳育. All rights reserved.
 //
 
 #import "TSNetworking.h"
-NSString * const kAPIBaseURL = @"http://wash-cis.toocms.com/";
+NSString * const kAPIBaseURL = @"http://cjml-api.toocms.com/index.php/";
 
 
 static TSHTTPSessionManager *_manager = nil;
@@ -47,9 +47,10 @@ static TSHTTPSessionManager *_manager = nil;
 {
     TSHTTPSessionManager * manager = [TSHTTPSessionManager sharedManager];
     MBProgressHUD * hud = [MBProgressHUD showMessage:nil];
-    TSLog2(@"请求参数：\n%@\nURL:%@", params,urlString);
+    NSString * string = [NSString stringWithFormat:@"请求参数：\n%@\nURL:%@", params,urlString];
+    TSLog(string);
     [manager GET:urlString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
-      
+        
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [hud removeFromSuperview];
@@ -73,7 +74,8 @@ static TSHTTPSessionManager *_manager = nil;
     TSHTTPSessionManager * manager = [TSHTTPSessionManager sharedManager];
     
     MBProgressHUD * hud = [MBProgressHUD showMessage:nil];
-    TSLog2(@"请求参数：\n%@\nURL:%@", params,urlString);
+    NSString * string = [NSString stringWithFormat:@"请求参数：\n%@\nURL:%@", params,urlString];
+    TSLog(string);
     [manager POST:urlString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -97,8 +99,8 @@ static TSHTTPSessionManager *_manager = nil;
                failBlock:(void (^)(NSError *))failure
 {
     TSHTTPSessionManager * manager = [TSHTTPSessionManager sharedManager];
-    
-    TSLog(params);
+    NSString * string = [NSString stringWithFormat:@"请求参数：\n%@\nURL:%@", params,urlString];
+    TSLog(string);
     MBProgressHUD * hud = [MBProgressHUD showMessage:nil];
     [manager POST:urlString parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
@@ -132,16 +134,16 @@ static TSHTTPSessionManager *_manager = nil;
  */
 + (NSString *)getFileMineType:(NSString *)fileName {
     
-//    NSURL * url = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
-//    
-//    NSURLRequest * request = [NSURLRequest requestWithURL:url];
-//    
-//    __block NSURLResponse * res = nil;
-//    [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        res = response;
-//    }];
-//    
-//    return res.MIMEType;
+    //    NSURL * url = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
+    //
+    //    NSURLRequest * request = [NSURLRequest requestWithURL:url];
+    //
+    //    __block NSURLResponse * res = nil;
+    //    [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    //        res = response;
+    //    }];
+    //
+    //    return res.MIMEType;
     
     
     NSURL * url = [[NSBundle mainBundle] URLForResource:fileName withExtension:nil];
@@ -185,7 +187,7 @@ static TSHTTPSessionManager *_manager = nil;
             failBlock:failure];
 #pragma clang diagnostic pop
     
-
+    
 }
 
 + (void)POSTImageWithURL:(NSString *)urlString
@@ -215,9 +217,14 @@ static TSHTTPSessionManager *_manager = nil;
                 failBlock:(void (^)(NSError *))failure
 {
     TSHTTPSessionManager * manager = [TSHTTPSessionManager sharedManager];
-    
-    TSLog(params);
-    [manager POST:urlString parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSDictionary *dic = nil;
+    if ([params isKindOfClass:[NSDictionary class]]) {
+        dic = params;
+    } else {
+        dic = [params mj_JSONObject];
+    }
+    TSLog(dic);
+    [manager POST:urlString parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         
         for (int i = 0; i < images.count; i++) {
             

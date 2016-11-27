@@ -21,15 +21,36 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
     [self setupRootViewController];
-    
+    [self setupUserData];
     [self initADView];
+//    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];//设置HUD和文本的颜色
+//    [SVProgressHUD setBackgroundColor:[UIColor blackColor]];//背景
     return YES;
 }
+
+///  设置用户信息
+- (void)setupUserData {
+    User * user = [User sharedUser];
+    TSUserInfo * userInfo = [User getUserInfomation];
+    if (userInfo) {
+        [User sharedUser].userInfo = userInfo;
+        [User sharedUser].login = YES;
+    } else {
+        user.userInfo = [TSUserInfo new];
+    }
+}
+
 
 // 设置rootviewController
 - (void)setupRootViewController {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
+    
+    // 截屏view
+    self.screenShotView = [[TSScreenShotView alloc] initWithFrame:CGRectMake(0, 0, self.window.size.width, self.window.size.height)];
+    self.screenShotView.hidden = YES;
+    [self.window insertSubview:self.screenShotView atIndex:0];
+
     if (!NOTFIRSTOPEN) {//第一次进入app
         self.window.rootViewController = [[FirstGuideViewController alloc] init];
     } else {
