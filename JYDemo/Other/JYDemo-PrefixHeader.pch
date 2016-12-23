@@ -26,10 +26,11 @@
 #import "TSNetworking.h"
 
 #import "Common.h"
-#import "TSParamter.h"
+#import "TSParamter.h"//参数模型
 #import "SLInputAccessoryView.h"
 #import "SLCollectionLogTool.h"
 //#import "TSModel.h"
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
+#import "UITextView+Placeholder.h"
 #endif /* JYDemo_PrefixHeader_pch */

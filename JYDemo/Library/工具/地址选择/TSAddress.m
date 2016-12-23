@@ -7,7 +7,6 @@
 //
 
 #import "TSAddress.h"
-#import "NSObject+MJKeyValue.h"
 
 
 @implementation TSAddress

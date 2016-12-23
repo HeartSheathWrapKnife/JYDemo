@@ -9,5 +9,17 @@
 #import "TSParamter.h"
 
 @implementation TSParamter
++ (NSDictionary*)replacedKeyFromPropertyName {
+    return @{@"NEW_account" : @"new_account",@"NEW_password":@"new_password"};
+}
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.token = TokenCJML;
+        self.terminal = @"2";
+    }
+    return self;
+}
 @end

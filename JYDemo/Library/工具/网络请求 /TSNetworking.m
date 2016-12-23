@@ -166,7 +166,7 @@ static TSHTTPSessionManager *_manager = nil;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated"
     [self GETWithURL:urlString
-              params:[params keyValues]
+              params:[params yy_modelToJSONObject]
        completeBlock:success
            failBlock:failure];
 #pragma clang diagnostic pop
@@ -182,7 +182,7 @@ static TSHTTPSessionManager *_manager = nil;
 #pragma clang diagnostic ignored "-Wdeprecated"
     
     [self POSTWithURL:urlString
-               params:[params keyValues]
+               params:[params yy_modelToJSONObject]
         completeBlock:success
             failBlock:failure];
 #pragma clang diagnostic pop
@@ -201,7 +201,7 @@ static TSHTTPSessionManager *_manager = nil;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated"
     [self POSTImageWithURL:urlString
-                    params:[params keyValues]
+                    params:[params yy_modelToJSONObject]
                      image:image
                 imageParam:imageParam
              completeBlock:success
@@ -221,7 +221,7 @@ static TSHTTPSessionManager *_manager = nil;
     if ([params isKindOfClass:[NSDictionary class]]) {
         dic = params;
     } else {
-        dic = [params mj_JSONObject];
+        dic = [params yy_modelToJSONObject];
     }
     TSLog(dic);
     [manager POST:urlString parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {

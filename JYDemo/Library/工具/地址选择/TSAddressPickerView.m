@@ -192,7 +192,8 @@ static TSAddressPickerView * pickerView_ = nil;
 {
     if (!_array) {
         _array = [NSArray array];
-        _array = [TSProvince objectArrayWithFilename:@"city.plist"];
+        _array = [NSArray yy_modelArrayWithClass:[TSProvince class] json:[NSDictionary dictionaryWithContentsOfFile:@"city.plist"]];
+//        _array = [TSProvince objectArrayWithFilename:@"city.plist"];
         
     }
     return _array;

@@ -10,7 +10,7 @@
 #import "TSNavigationController.h"
 #import "OneViewController.h"
 #import "TwoViewController.h"
-#import "ThreeViewController.h"
+#import "SocialController.h"
 #import "FourViewController.h"
 
 #import "JYTabBar.h"
@@ -116,7 +116,7 @@
     NSArray *title = @[@"模块壹",@"模块贰",@"模块叁",@"模块肆"];
     NSArray *array = @[[OneViewController new],
                        [TwoViewController new],
-                       [ThreeViewController new],
+                       [SocialController new],
                        [FourViewController new],];
     
     for (int i = 0; i < title.count; i++) {

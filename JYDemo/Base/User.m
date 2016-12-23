@@ -49,7 +49,7 @@ NSString * const kAgreeRefundNotification = @"kAgreeRefundNotification";
     
     NSDictionary * d = [NSDictionary dictionaryWithContentsOfFile:path];
     if ([d count]) {
-        [User sharedUser].userInfo = [TSUserInfo mj_objectWithKeyValues:d];
+        [User sharedUser].userInfo = [TSUserInfo yy_modelWithJSON:d];
         [User sharedUser].login = YES;
         return YES;
     }
@@ -69,7 +69,7 @@ NSString * const kAgreeRefundNotification = @"kAgreeRefundNotification";
     
     if (!userInfo) return NO;
     
-    TSUserInfo * info = [TSUserInfo objectWithKeyValues:userInfo];
+    TSUserInfo * info = [TSUserInfo yy_modelWithDictionary:userInfo];
     [[User sharedUser] setUserInfo:info];
     [[User sharedUser] setLogin:YES];
     
@@ -77,13 +77,13 @@ NSString * const kAgreeRefundNotification = @"kAgreeRefundNotification";
     NSString * path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"userInfo.plist"];
     TSLog(path);
     // 是否保存成功
-    return [[info keyValues] writeToFile:path atomically:YES];
+    return [[info yy_modelToJSONObject] writeToFile:path atomically:YES];
 }
 
 + (TSUserInfo *)getUserInfomation {
     // 沙盒路径
     NSString * path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"userInfo.plist"];
-    return [TSUserInfo objectWithKeyValues:[NSDictionary dictionaryWithContentsOfFile:path]];
+    return [TSUserInfo  yy_modelWithDictionary:[NSDictionary dictionaryWithContentsOfFile:path]];
 }
 
 + (BOOL)removeUserInfomation {

@@ -8,6 +8,7 @@
 #ifndef JYDemo_Common_h
 #define JYDemo_Common_h
 
+#define TokenCJML @"dcd88ae9a206b041326ed2cb35c1a69d"
 
 //#pragma mark - 色彩相关宏
 #define RGBColor(r, g, b)  [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:1]//RGB
@@ -19,7 +20,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 //#pragma mark - 宽高大小相关宏
-#define ScreenWith  [UIScreen mainScreen].bounds.size.width
+#define ScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kScreenHeigth [[UIScreen mainScreen] bounds].size.height
 #define kScreenWidth [[UIScreen mainScreen] bounds].size.width

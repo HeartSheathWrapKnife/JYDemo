@@ -30,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
-    self.navigationItem.title = @"视频预览";
+    self.navigationItem.title = [NSBundle tz_localizedStringForKey:@"Preview"];
     [self configMoviePlayer];
 }
 
@@ -53,7 +53,7 @@
 }
 
 /// Show progress，do it next time / 给播放器添加进度更新,下次加上
--(void)addProgressObserver{
+- (void)addProgressObserver{
     AVPlayerItem *playerItem = _player.currentItem;
     UIProgressView *progress = _progress;
     [_player addPeriodicTimeObserverForInterval:CMTimeMake(1.0, 1.0) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
@@ -68,8 +68,8 @@
 - (void)configPlayButton {
     _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _playButton.frame = CGRectMake(0, 64, self.view.tz_width, self.view.tz_height - 64 - 44);
-    [_playButton setImage:[UIImage imageNamed:@"MMVideoPreviewPlay"] forState:UIControlStateNormal];
-    [_playButton setImage:[UIImage imageNamed:@"MMVideoPreviewPlayHL"] forState:UIControlStateHighlighted];
+    [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlay.png"] forState:UIControlStateNormal];
+    [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlayHL.png"] forState:UIControlStateHighlighted];
     [_playButton addTarget:self action:@selector(playButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_playButton];
 }
@@ -84,7 +84,7 @@
     _okButton.frame = CGRectMake(self.view.tz_width - 44 - 12, 0, 44, 44);
     _okButton.titleLabel.font = [UIFont systemFontOfSize:16];
     [_okButton addTarget:self action:@selector(okButtonClick) forControlEvents:UIControlEventTouchUpInside];
-    [_okButton setTitle:@"确定" forState:UIControlStateNormal];
+    [_okButton setTitle:[NSBundle tz_localizedStringForKey:@"Done"] forState:UIControlStateNormal];
     TZImagePickerController *imagePickerVc = (TZImagePickerController *)self.navigationController;
     [_okButton setTitleColor:imagePickerVc.oKButtonTitleColorNormal forState:UIControlStateNormal];
     
@@ -117,7 +117,13 @@
     if (imagePickerVc.didFinishPickingVideoHandle) {
         imagePickerVc.didFinishPickingVideoHandle(_cover,_model.asset);
     }
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    if (self.navigationController) {
+        if (imagePickerVc.autoDismiss) {
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+        }
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 #pragma mark - Notification Method
@@ -126,7 +132,7 @@
     [_player pause];
     _toolBar.hidden = NO;
     [self.navigationController setNavigationBarHidden:NO];
-    [_playButton setImage:[UIImage imageNamed:@"MMVideoPreviewPlay"] forState:UIControlStateNormal];
+    [_playButton setImage:[UIImage imageNamedFromMyBundle:@"MMVideoPreviewPlay.png"] forState:UIControlStateNormal];
     if (iOS7Later) [UIApplication sharedApplication].statusBarHidden = NO;
 }
 
