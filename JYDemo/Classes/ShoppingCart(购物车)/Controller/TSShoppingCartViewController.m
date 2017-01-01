@@ -26,7 +26,9 @@
 @property (nonatomic, strong) UILabel * totalPrice;
 ///   合计：（显示用）
 @property (nonatomic, strong) UILabel * totalShow;
-
+@property (nonatomic, strong) ShopCartToolView * toolView;
+///   空视图
+@property (nonatomic, strong) UIView * emptyView;
 ///   modelArr
 @property (nonatomic, strong) NSMutableArray<ShopCartModel *> * modelsArr;
 @end
@@ -46,6 +48,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    SetBackgroundGrayColor;
     
     self.edit = NO;//默认处于不是编辑的状态
     
@@ -72,18 +76,7 @@
     [self.view addSubview:tableView];
     self.tableView = tableView;
     
-    ///   初始化的数据
-    for (int i = 0 ; i <10 ; i ++) {
-        ShopCartModel *model = [ShopCartModel new];
-        model.number = 1;
-        model.GoodName = [NSString stringWithFormat:@"商品第%zd个的名字",i];
-        model.GoodSize = @"规格描述";
-        model.GoodPrice = @"5";
-        model.GoodDescription = @"描述";
-        model.selected = YES;
-        
-        [self.modelsArr addObject:model];
-    }
+    
     //加载工具条
     [self loadShopToolView];
     
@@ -95,14 +88,15 @@
 /// 初始化NavigaitonBar
 - (void)_initNavigationBar
 {
-    WeakSelf;
-    wself.ts_navgationBar = [TSNavigationBar navWithTitle:@"购物车" rightTitle:@"编辑" rightAction:^{
+    @weakify(self);
+    self.ts_navgationBar = [TSNavigationBar navWithTitle:@"购物车" rightTitle:@"编辑" rightAction:^{
+        @strongify(self);
         TSLog(@"编辑");
-        wself.edit = !wself.isEdit;
-        wself.ts_navgationBar.rightButton.title = wself.isEdit ? @"完成" : @"编辑";
-        wself.nextBtn.title = wself.isEdit?@"删除":@"去结算";
-        wself.totalPrice.hidden = wself.totalShow.hidden = wself.isEdit?YES:NO;
-        [wself.tableView reloadData];
+        self.edit = !self.isEdit;
+        self.ts_navgationBar.rightButton.title = self.isEdit ? @"完成" : @"编辑";
+        self.nextBtn.title = self.isEdit?@"删除":@"去结算";
+        self.totalPrice.hidden = self.totalShow.hidden = self.isEdit?YES:NO;
+        [self.tableView reloadData];
         
     }];
 }
@@ -119,8 +113,8 @@
     self.totalShow = toolView.totalLabel;
     self.selectedAllBtn = toolView.selectAllBtn;
     self.nextBtn = toolView.nextBtn;
-    
     [self.view addSubview:toolView];
+    self.toolView = toolView;
 }
 
 #pragma mark - Action
@@ -162,6 +156,24 @@
 }
 #pragma mark - 网络请求
 
+/**
+ 获取购物车数据
+ */
+- (void)getShopCartData {
+    ///   初始化的数据   假数据
+    for (int i = 0 ; i <10 ; i ++) {
+        ShopCartModel *model = [ShopCartModel new];
+        model.number = 1;
+        model.GoodName = [NSString stringWithFormat:@"商品第%zd个的名字",i];
+        model.GoodSize = @"规格描述";
+        model.GoodPrice = @"5";
+        model.GoodDescription = @"描述";
+        model.selected = YES;
+        [self.modelsArr addObject:model];
+    }
+    self.modelsArr.count ? (self.emptyView.hidden = YES):(self.emptyView.hidden = NO);
+    self.modelsArr.count ? (self.toolView.hidden = NO):(self.toolView.hidden = YES);
+}
 
 #pragma mark - Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -251,5 +263,20 @@
     }
     return _modelsArr;
 }
+
+///  空视图
+- (UIView *)emptyView {
+    if (!_emptyView) {
+        _emptyView = [UIView viewWithBgColor:RGBColor(245, 245, 245) frame:Rect(0, 0, kScreenWidth, kScreenHeigth - 64)];
+        _emptyView.centerX = ScreenWidth/2;
+        UILabel *label = [UILabel labelWithText:@"暂无数据" font:14 textColor:[UIColor lightGrayColor] frame:CGRectMake(0, 0, kScreenWidth, 30)];
+        label.center = _emptyView.center;
+        label.textAlignment = NSTextAlignmentCenter;
+        [_emptyView addSubview:label];
+        [self.tableView addSubview:_emptyView];
+    }
+    return _emptyView;
+}
+
 
 @end

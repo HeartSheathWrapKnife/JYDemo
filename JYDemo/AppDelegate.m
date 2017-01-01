@@ -11,22 +11,52 @@
 #import "FirstGuideViewController.h"
 #import "TSNavigationController.h"
 #import "XHLaunchAd.h"
+#import "JYJPushManager.h"
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
+//代理
++ (instancetype)sharedDelegate {
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
     [self setupRootViewController];
+    
     [self setupUserData];
-    [self initADView];
+    
+    //设置推送相关
+    [JYJPushManager isAllowedRemoteNotification];//是否开启推送权限
+    [JYJPushManager setupRemoteNotification];//setup远程推送
+    [JYJPushManager setupJPushWithOption:launchOptions AppKey:@"0a3904a3546d1e2efdca5b15" apsForProduction:NO];
+    [[JYJPushManager shareManager] setBlock:^(NSDictionary *userInfo){
+        TSLog(userInfo);
+        SVShowSuccess(@"拿到useinfo执行对应的操作");
+    }];
+    [JYJPushManager setJPushAlias:@"21"];//设置别名
+    
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [JYJPushManager setJPushAlias:@"21"];//设置别名
+    });
+
 //    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];//设置HUD和文本的颜色
 //    [SVProgressHUD setBackgroundColor:[UIColor blackColor]];//背景
+//    if ([[UIDevice currentDevice].systemVersion doubleValue] >= 8.0) {
+//        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+//        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+//    }
+
     return YES;
 }
+
+
 
 ///  设置用户信息
 - (void)setupUserData {
@@ -46,7 +76,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    // 截屏view
+    // 截屏viewx
     self.screenShotView = [[TSScreenShotView alloc] initWithFrame:CGRectMake(0, 0, self.window.size.width, self.window.size.height)];
     self.screenShotView.hidden = YES;
     [self.window insertSubview:self.screenShotView atIndex:0];
@@ -89,6 +119,23 @@
     }
 }
 
+#pragma mark JPush
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {    
+    /// Required - 注册 DeviceToken
+    [JPUSHService registerDeviceToken:deviceToken];
+    
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //Optional
+    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    TSLog2(@"本地通知userinfo%@",notification.userInfo);
+    [JYJPushManager clearBadgeNumber];
+    
+}
 
 #pragma mark 弹出登录页面
 - (void)showLoginViewController

@@ -117,7 +117,11 @@ static dispatch_source_t timer = NULL;
     //每秒执行一次
     dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC, 0);
     dispatch_source_set_event_handler(_timer, ^{
-        
+        //如果视图退出 清除timer
+        if (![self superview]) {
+            dispatch_source_cancel(_timer);
+            return ;
+        }
         //倒计时结束，关闭
         if (timeOut <= 0) {
             dispatch_source_cancel(_timer);

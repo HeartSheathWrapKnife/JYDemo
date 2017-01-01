@@ -67,6 +67,21 @@
 		1F0E09081DEEB90600199E35 /* document.doc in Resources */ = {isa = PBXBuildFile; fileRef = 1F0E08F81DEEB90600199E35 /* document.doc */; };
 		1F0E09091DEEB90600199E35 /* Steve.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 1F0E08F91DEEB90600199E35 /* Steve.pdf */; };
 		1F0E090A1DEEB90600199E35 /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F0E08FB1DEEB90600199E35 /* TwoViewController.m */; };
+		1F3EC32A1E0D1316009E5120 /* jcore-ios-1.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC3271E0D1316009E5120 /* jcore-ios-1.0.0.a */; };
+		1F3EC32B1E0D1317009E5120 /* jpush-ios-3.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC3281E0D1316009E5120 /* jpush-ios-3.0.0.a */; };
+		1F3EC32E1E0D14A5009E5120 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC32D1E0D14A5009E5120 /* CFNetwork.framework */; };
+		1F3EC3301E0D14B1009E5120 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC32F1E0D14B1009E5120 /* CoreFoundation.framework */; };
+		1F3EC3321E0D14C1009E5120 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC3311E0D14C1009E5120 /* CoreTelephony.framework */; };
+		1F3EC3341E0D14CC009E5120 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC3331E0D14CC009E5120 /* SystemConfiguration.framework */; };
+		1F3EC3361E0D14D8009E5120 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC3351E0D14D8009E5120 /* CoreGraphics.framework */; };
+		1F3EC3381E0D14E3009E5120 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC3371E0D14E3009E5120 /* Foundation.framework */; };
+		1F3EC33A1E0D14EB009E5120 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC3391E0D14EB009E5120 /* UIKit.framework */; };
+		1F3EC33C1E0D14F5009E5120 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC33B1E0D14F5009E5120 /* Security.framework */; };
+		1F3EC33E1E0D1502009E5120 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC33D1E0D1502009E5120 /* libz.tbd */; };
+		1F3EC3401E0D150C009E5120 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC33F1E0D150C009E5120 /* AdSupport.framework */; };
+		1F3EC3421E0D1572009E5120 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC3411E0D1572009E5120 /* UserNotifications.framework */; };
+		1F3EC3441E0D15A9009E5120 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3EC3431E0D15A9009E5120 /* libresolv.9.tbd */; };
+		1F3EC3541E0D1FF2009E5120 /* JYJPushManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3EC3531E0D1FF2009E5120 /* JYJPushManager.m */; };
 		1F77D59C1D9D005A005D83D6 /* NSAttributedString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F77D33B1D9D0059005D83D6 /* NSAttributedString+Extension.m */; };
 		1F77D59D1D9D005A005D83D6 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F77D33D1D9D0059005D83D6 /* NSDate+Extension.m */; };
 		1F77D59E1D9D005A005D83D6 /* NSObject+ExchangeToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F77D33F1D9D0059005D83D6 /* NSObject+ExchangeToString.m */; };
@@ -458,6 +473,24 @@
 		1F0E08F91DEEB90600199E35 /* Steve.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Steve.pdf; sourceTree = "<group>"; };
 		1F0E08FA1DEEB90600199E35 /* TwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
 		1F0E08FB1DEEB90600199E35 /* TwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		1F3EC3271E0D1316009E5120 /* jcore-ios-1.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.0.0.a"; sourceTree = "<group>"; };
+		1F3EC3281E0D1316009E5120 /* jpush-ios-3.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.0.0.a"; sourceTree = "<group>"; };
+		1F3EC3291E0D1316009E5120 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		1F3EC32D1E0D14A5009E5120 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		1F3EC32F1E0D14B1009E5120 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		1F3EC3311E0D14C1009E5120 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1F3EC3331E0D14CC009E5120 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1F3EC3351E0D14D8009E5120 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1F3EC3371E0D14E3009E5120 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1F3EC3391E0D14EB009E5120 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1F3EC33B1E0D14F5009E5120 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1F3EC33D1E0D1502009E5120 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		1F3EC33F1E0D150C009E5120 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		1F3EC3411E0D1572009E5120 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		1F3EC3431E0D15A9009E5120 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		1F3EC3451E0D15CB009E5120 /* JYDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JYDemo.entitlements; sourceTree = "<group>"; };
+		1F3EC3521E0D1FF2009E5120 /* JYJPushManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYJPushManager.h; sourceTree = "<group>"; };
+		1F3EC3531E0D1FF2009E5120 /* JYJPushManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYJPushManager.m; sourceTree = "<group>"; };
 		1F77D3391D9D0059005D83D6 /* Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Category.h; sourceTree = "<group>"; };
 		1F77D33A1D9D0059005D83D6 /* NSAttributedString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Extension.h"; sourceTree = "<group>"; };
 		1F77D33B1D9D0059005D83D6 /* NSAttributedString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Extension.m"; sourceTree = "<group>"; };
@@ -1061,6 +1094,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F3EC32A1E0D1316009E5120 /* jcore-ios-1.0.0.a in Frameworks */,
+				1F3EC32B1E0D1317009E5120 /* jpush-ios-3.0.0.a in Frameworks */,
+				1F3EC3441E0D15A9009E5120 /* libresolv.9.tbd in Frameworks */,
+				1F3EC3421E0D1572009E5120 /* UserNotifications.framework in Frameworks */,
+				1F3EC3401E0D150C009E5120 /* AdSupport.framework in Frameworks */,
+				1F3EC33E1E0D1502009E5120 /* libz.tbd in Frameworks */,
+				1F3EC33C1E0D14F5009E5120 /* Security.framework in Frameworks */,
+				1F3EC33A1E0D14EB009E5120 /* UIKit.framework in Frameworks */,
+				1F3EC3381E0D14E3009E5120 /* Foundation.framework in Frameworks */,
+				1F3EC3361E0D14D8009E5120 /* CoreGraphics.framework in Frameworks */,
+				1F3EC3341E0D14CC009E5120 /* SystemConfiguration.framework in Frameworks */,
+				1F3EC3321E0D14C1009E5120 /* CoreTelephony.framework in Frameworks */,
+				1F3EC3301E0D14B1009E5120 /* CoreFoundation.framework in Frameworks */,
+				1F3EC32E1E0D14A5009E5120 /* CFNetwork.framework in Frameworks */,
 				1F77D5AC1D9D005A005D83D6 /* BaiduMapAPI_Cloud.framework in Frameworks */,
 				1F77D6681D9D005A005D83D6 /* AlipaySDK.framework in Frameworks */,
 				1F77D5AD1D9D005A005D83D6 /* BaiduMapAPI_Location.framework in Frameworks */,
@@ -1377,6 +1424,52 @@
 			path = Two;
 			sourceTree = "<group>";
 		};
+		1F3EC3251E0D1316009E5120 /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				1F3EC3261E0D1316009E5120 /* Lib */,
+			);
+			path = JPush;
+			sourceTree = "<group>";
+		};
+		1F3EC3261E0D1316009E5120 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				1F3EC3271E0D1316009E5120 /* jcore-ios-1.0.0.a */,
+				1F3EC3281E0D1316009E5120 /* jpush-ios-3.0.0.a */,
+				1F3EC3291E0D1316009E5120 /* JPUSHService.h */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		1F3EC32C1E0D14A5009E5120 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F3EC3431E0D15A9009E5120 /* libresolv.9.tbd */,
+				1F3EC3411E0D1572009E5120 /* UserNotifications.framework */,
+				1F3EC33F1E0D150C009E5120 /* AdSupport.framework */,
+				1F3EC33D1E0D1502009E5120 /* libz.tbd */,
+				1F3EC33B1E0D14F5009E5120 /* Security.framework */,
+				1F3EC3391E0D14EB009E5120 /* UIKit.framework */,
+				1F3EC3371E0D14E3009E5120 /* Foundation.framework */,
+				1F3EC3351E0D14D8009E5120 /* CoreGraphics.framework */,
+				1F3EC3331E0D14CC009E5120 /* SystemConfiguration.framework */,
+				1F3EC3311E0D14C1009E5120 /* CoreTelephony.framework */,
+				1F3EC32F1E0D14B1009E5120 /* CoreFoundation.framework */,
+				1F3EC32D1E0D14A5009E5120 /* CFNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F3EC3511E0D1F61009E5120 /* JYJPushManager */ = {
+			isa = PBXGroup;
+			children = (
+				1F3EC3521E0D1FF2009E5120 /* JYJPushManager.h */,
+				1F3EC3531E0D1FF2009E5120 /* JYJPushManager.m */,
+			);
+			path = JYJPushManager;
+			sourceTree = "<group>";
+		};
 		1F77D3371D9D0059005D83D6 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -1415,6 +1508,7 @@
 		1F77D34B1D9D0059005D83D6 /* 三方 */ = {
 			isa = PBXGroup;
 			children = (
+				1F3EC3251E0D1316009E5120 /* JPush */,
 				1FCFEAC21E0BCE660022C32F /* SDPhotoBrowser */,
 				1FCFEA9C1E0BC29A0022C32F /* TZImagePickerController */,
 				1F0E085F1DEEB76000199E35 /* YYKit */,
@@ -2051,6 +2145,7 @@
 			children = (
 				1F056A081DAA279700F7A2A4 /* SLCollectionLogTool.h */,
 				1F056A091DAA279700F7A2A4 /* SLCollectionLogTool.m */,
+				1F3EC3511E0D1F61009E5120 /* JYJPushManager */,
 				1FCFEA6B1E0B85600022C32F /* UITextView+Placeholder */,
 				1FF3E6271DF15A1C00868D54 /* 控制台中文打印 */,
 				1F0569FC1DAA237A00F7A2A4 /* JYScrollBanner（轮播控件） */,
@@ -2284,6 +2379,7 @@
 				1FC838CF1D757C9C00EFC981 /* JYDemoTests */,
 				1FC838DA1D757C9C00EFC981 /* JYDemoUITests */,
 				1FC838B41D757C9C00EFC981 /* Products */,
+				1F3EC32C1E0D14A5009E5120 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2300,6 +2396,7 @@
 		1FC838B51D757C9C00EFC981 /* JYDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1F3EC3451E0D15CB009E5120 /* JYDemo.entitlements */,
 				1FC838B91D757C9C00EFC981 /* AppDelegate.h */,
 				1FC838BA1D757C9C00EFC981 /* AppDelegate.m */,
 				1F0E08D61DEEB90600199E35 /* Classes */,
@@ -2564,6 +2661,11 @@
 					1FC838B21D757C9C00EFC981 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = VTXNU3ZKSE;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					1FC838CB1D757C9C00EFC981 = {
 						CreatedOnToolsVersion = 7.3;
@@ -2922,6 +3024,7 @@
 				1F77D6BB1D9D0236005D83D6 /* FirstGuideViewController.m in Sources */,
 				1F77D61B1D9D005A005D83D6 /* UIControl+RACSignalSupportPrivate.m in Sources */,
 				1F0E08CC1DEEB76000199E35 /* UIView+YYText.m in Sources */,
+				1F3EC3541E0D1FF2009E5120 /* JYJPushManager.m in Sources */,
 				1F77D6251D9D005A005D83D6 /* UITableViewHeaderFooterView+RACSignalSupport.m in Sources */,
 				1FCFEABA1E0BC29A0022C32F /* TZPhotoPreviewController.m in Sources */,
 				1F77D5C01D9D005A005D83D6 /* MJRefreshAutoStateFooter.m in Sources */,
@@ -3066,30 +3169,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_ENTITLEMENTS = JYDemo/JYDemo.entitlements;
 				DEVELOPMENT_TEAM = VTXNU3ZKSE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/Location",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/支付宝",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/Location",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/支付宝",
 				);
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/JYDemo/Library/三方/支付宝";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/JYDemo/Library/三方/支付宝",
+					"$(SRCROOT)/JYDemo/Library/三方/JPush/Lib",
+				);
 				INFOPLIST_FILE = JYDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/UMSocial_Sdk_5.1",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/WXSDKExport",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/支付宝",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/UMSocial_Sdk_5.1",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/WXSDKExport",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/支付宝",
+					"$(PROJECT_DIR)/JYDemo/Library/三方/JPush/Lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.toocms.Supermarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toocms.supermali;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/JYDemo/Library/三方/JPush/Lib";
 			};
 			name = Debug;
 		};
@@ -3098,30 +3202,31 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CODE_SIGN_ENTITLEMENTS = JYDemo/JYDemo.entitlements;
 				DEVELOPMENT_TEAM = VTXNU3ZKSE;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/Location",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/支付宝",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/Location",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/支付宝",
 				);
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/JYDemo/Library/三方/支付宝";
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/JYDemo/Library/三方/支付宝",
+					"$(SRCROOT)/JYDemo/Library/三方/JPush/Lib",
+				);
 				INFOPLIST_FILE = JYDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/UMSocial_Sdk_5.1",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/WXSDKExport",
 					"$(PROJECT_DIR)/JYDemo/Library/三方/支付宝",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/UMSocial_Sdk_5.1",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/WXSDKExport",
-					"$(PROJECT_DIR)/JYDemo/Library（库）/三方/支付宝",
+					"$(PROJECT_DIR)/JYDemo/Library/三方/JPush/Lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.toocms.Supermarket;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toocms.supermali;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/JYDemo/Library/三方/JPush/Lib";
 			};
 			name = Release;
 		};

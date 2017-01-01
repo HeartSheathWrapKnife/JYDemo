@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
++ (instancetype)sharedDelegate;
 
 //弹出登录页面
 - (void)showLoginViewController;
